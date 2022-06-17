@@ -26,25 +26,25 @@ pub trait AlignedAllocable: Zero + Clone + Copy + Sized {
 
 impl AlignedAllocable for f64 {
     unsafe fn alloc(n: usize) -> *mut Self {
-        ffi::fftw_alloc_real(n as u64)
+        ffi::fftw_alloc_real(n as u32)
     }
 }
 
 impl AlignedAllocable for f32 {
     unsafe fn alloc(n: usize) -> *mut Self {
-        ffi::fftwf_alloc_real(n as u64)
+        ffi::fftwf_alloc_real(n as u32)
     }
 }
 
 impl AlignedAllocable for c64 {
     unsafe fn alloc(n: usize) -> *mut Self {
-        ffi::fftw_alloc_complex(n as u64) as *mut _
+        ffi::fftw_alloc_complex(n as u32) as *mut _
     }
 }
 
 impl AlignedAllocable for c32 {
     unsafe fn alloc(n: usize) -> *mut Self {
-        ffi::fftwf_alloc_complex(n as u64) as *mut c32
+        ffi::fftwf_alloc_complex(n as u32) as *mut c32
     }
 }
 

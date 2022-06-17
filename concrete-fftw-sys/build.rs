@@ -46,13 +46,13 @@ fn main() {
     // ===================================================================================== Compile
     let mut configure = Command::new(canonicalize(out_src_dir.join("configure")).unwrap());
     configure
-        .arg("--with-pic")
+        // .arg("--with-pic")
         .arg("--enable-static")
-        .arg("--enable-avx")
-        .arg("--enable-avx2")
-        .arg("--enable-sse2")
-        .arg("--enable-generic-simd128")
-        .arg("--enable-generic-simd256")
+        // .arg("--enable-avx")
+        // .arg("--enable-avx2")
+        // .arg("--enable-sse2")
+        // .arg("--enable-generic-simd128")
+        // .arg("--enable-generic-simd256")
         .arg("--disable-doc")
         .arg(format!("--prefix={}", out_dir.display()))
         .current_dir(&out_src_dir);
@@ -67,15 +67,15 @@ fn main() {
     // run(Command::new("make distclean").current_dir(&out_src_dir));
     let mut configure = Command::new(canonicalize(out_src_dir.join("configure")).unwrap());
     configure
-        .arg("--with-pic")
+        // .arg("--with-pic")
         .arg("--enable-static")
         .arg("--enable-single")
-        .arg("--enable-avx")
-        .arg("--enable-avx2")
-        .arg("--enable-sse")
-        .arg("--enable-sse2")
-        .arg("--enable-generic-simd128")
-        .arg("--enable-generic-simd256")
+        // .arg("--enable-avx")
+        // .arg("--enable-avx2")
+        // .arg("--enable-sse")
+        // .arg("--enable-sse2")
+        // .arg("--enable-generic-simd128")
+        // .arg("--enable-generic-simd256")
         .arg("--disable-doc")
         .arg(format!("--prefix={}", out_dir.display()))
         .current_dir(&out_src_dir);
